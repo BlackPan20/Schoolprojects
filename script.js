@@ -370,6 +370,10 @@ function checkTheFirstPositionOfWert(){
     }
     
 }
+function checkTheLastPositionOfWert(){
+    var check = buchstabenArray.lastIndexOf("Wert") + 1
+    alert(check)
+}
 
 
 
