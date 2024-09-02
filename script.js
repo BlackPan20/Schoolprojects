@@ -371,17 +371,6 @@ function checkTheFirstPositionOfWert(){
     
 }
 
-function checkIfWertinTheArrayAndChange(){
-    var userIn = "Wert"
-    var check = buchstabenArray.includes(userIn)
-    if(check == true){
-        var userIn2 = prompt("Was möchten sie hinzufügen?")
-        var userIn3 = buchstabenArray.indexOf(userIn)
-        buchstabenArray[userIn3] = userIn2
-        document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
-    }
-}
-
 
 
 
