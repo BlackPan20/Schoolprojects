@@ -376,16 +376,20 @@ function checkTheLastPositionOfWert(){
 }
 function sortAlround(){
     var lenghtOfArray = buchstabenArray.length
-    for(let i = 0; i < lenghtOfArray; i++){
+    for(let i = 0; i < 100; i++){
         if(buchstabenArray[i] > buchstabenArray[i+1]){
             alert("Die Liste ist nicht sortiert")
-            return;
-          
+            
+            var check = false
+            let temp = buchstabenArray[i];
+            buchstabenArray[i] = buchstabenArray[i+1];
+            buchstabenArray[i+1] = temp;
+            
+
     }
-
-
-    document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
+   
 }
 
-
+document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
+return;
 }
