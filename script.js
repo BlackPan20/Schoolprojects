@@ -377,13 +377,14 @@ function checkTheLastPositionOfWert(){
 function sortAlround(){
     var lenghtOfArray = buchstabenArray.length
     for(let i = 0; i < 100; i++){
-        if(buchstabenArray[i] > buchstabenArray[i+1]){
+        let e = 0
+        if(buchstabenArray[e] > buchstabenArray[e+1]){
             alert("Die Liste ist nicht sortiert")
             
             var check = false
-            let temp = buchstabenArray[i];
-            buchstabenArray[i] = buchstabenArray[i+1];
-            buchstabenArray[i+1] = temp;
+            let temp = buchstabenArray[e];
+            buchstabenArray[e] = buchstabenArray[e+1];
+            buchstabenArray[e+1] = temp;
             
 
     }
