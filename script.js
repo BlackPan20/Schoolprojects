@@ -378,19 +378,21 @@ function sortAlround(){
     var lenghtOfArray = buchstabenArray.length
     for(let i = 0; i < 100; i++){
         let e = 0
+        alert("Sortiere die Liste")
         if(buchstabenArray[e] > buchstabenArray[e+1]){
             alert("Die Liste ist nicht sortiert")
             
-            var check = false
+            
             let temp = buchstabenArray[e];
             buchstabenArray[e] = buchstabenArray[e+1];
             buchstabenArray[e+1] = temp;
-            
+            e++;
+            document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
 
     }
    
 }
 
-document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
+
 return;
 }
