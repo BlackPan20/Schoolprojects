@@ -374,7 +374,18 @@ function checkTheLastPositionOfWert(){
     var check = buchstabenArray.lastIndexOf("Wert") + 1
     alert(check)
 }
+function sortAlround(){
+    var lenghtOfArray = buchstabenArray.length
+    for(let i = 0; i < lenghtOfArray; i++){
+        if(buchstabenArray[i] > buchstabenArray[i+1]){
+            alert("Die Liste ist nicht sortiert")
+            return;
+          
+    }
 
 
+    document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
+}
 
 
+}
