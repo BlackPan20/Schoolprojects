@@ -396,3 +396,14 @@ function sortAlround(){
 
 return;
 }
+function sortArray(){
+    buchstabenArray.sort()
+    document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
+
+    buchstabenArray.push("Wert")
+    document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
+}
+function sortArrayBack(){
+    buchstabenArray.sort().reverse()
+    document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
+}
