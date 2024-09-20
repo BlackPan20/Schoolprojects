@@ -396,14 +396,29 @@ function sortAlround(){
 
 return;
 }
+
 function sortArray(){
     buchstabenArray.sort()
     document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
-
-    buchstabenArray.push("Wert")
-    document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
 }
-function sortArrayBack(){
-    buchstabenArray.sort().reverse()
-    document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
+
+function binarrySearch(){
+    var userIn = prompt("Welchen Wert möchten sie suchen?")
+    var check = buchstabenArray.includes(userIn)
+    if(check === true){
+        alert("Der Wert ist in der Liste")
+
+        var userAnswer = prompt("Möchten sie die Position des Wertes wissen?")
+        if(userAnswer === "ja" || userAnswer === "Ja" || userAnswer === "JA"){
+            var check = buchstabenArray.indexOf(userIn) + 1
+            alert(check)
+        }
+        else{
+            alert("Ok")
+        }
+    }
+    else{
+        alert("Der Wert ist nicht in der Liste")
+    }
+    
 }
