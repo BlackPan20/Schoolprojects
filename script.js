@@ -422,3 +422,16 @@ function binarrySearch(){
     }
     
 }
+
+function addRandomNumbers(){
+    buchstabenArray.length = 0
+    for(let i = 0; i<30; i++){
+
+        const randomInt = Math.floor(Math.random() * 100);
+        buchstabenArray.push(randomInt)
+        
+    }
+    alert(buchstabenArray)
+    document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
+    
+}
