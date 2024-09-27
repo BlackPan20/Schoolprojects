@@ -435,3 +435,89 @@ function addRandomNumbers(){
     document.getElementById("liste").innerHTML = buchstabenArray.join(", ")
     
 }
+function saveDatasInLocalStorage(){
+    localStorage.setItem("liste", buchstabenArray)
+    alert("Daten wurden gespeichert")
+}
+function readDatasFromLocalStorage(){
+    var data = localStorage.getItem("liste")
+    alert(data)
+    document.getElementById("liste").innerHTML = data
+    for(let i = 0; i < data.length; i++){
+        buchstabenArray.push(data[i])
+    }
+}
+function deleteDatasFromLocalStorage(){
+    localStorage.removeItem("liste")
+    alert("Daten wurden gelöscht")
+}
+function saveDatasInSessionStorage(){
+    sessionStorage.setItem("liste", buchstabenArray)
+    alert("Daten wurden gespeichert")
+}
+function readDatasFromSessionStorage(){
+    var data = sessionStorage.getItem("liste")
+    alert(data)
+    document.getElementById("liste").innerHTML = data
+    for(let i = 0; i < data.length; i++){
+        buchstabenArray.push(data[i])
+    }
+}
+function deleteDatasFromSessionStorage(){
+    sessionStorage.removeItem("liste")
+    alert("Daten wurden gelöscht")
+}
+function saveDatasInCookies(){
+    document.cookie = "liste=" + buchstabenArray
+    alert("Daten wurden gespeichert")
+}
+function readDatasFromCookies(){    
+    var data = document.cookie
+    alert(data)
+    document.getElementById("liste").innerHTML = data
+    for(let i = 0; i < data.length; i++){
+        buchstabenArray.push(data[i])
+    }
+}
+function deleteDatasFromCookies(){
+    var actDate = new Date();
+    document.cookie = "liste=; expires=Thu, actDate.getDate() 01:00:00 UTC; path=/;"
+    alert("Daten wurden gelöscht")
+}
+function saveDatasInIndexedDB(){
+    var request = indexedDB.open("liste", 1)
+    request.onupgradeneeded = function(){
+        var db = request.result
+        var store = db.createObjectStore("liste", {keyPath: "id"})
+    }
+    request.onsuccess = function(){
+        var db = request.result
+        var transaction = db.transaction("liste", "readwrite")
+        var store = transaction.objectStore("liste")
+        store.add(buchstabenArray)
+    }
+    alert("Daten wurden gespeichert")
+}
+function readDatasFromIndexedDB(){
+    var request = indexedDB.open("liste", 1)
+    request.onsuccess = function(){
+        var db = request.result
+        var transaction = db.transaction("liste", "readwrite")
+        var store = transaction.objectStore("liste")
+        var request2 = store.get(1)
+        request2.onsuccess = function(){
+            alert(request2.result)
+            document.getElementById("liste").innerHTML = request2.result
+        }
+    }
+}
+function deleteDatasFromIndexedDB(){
+    var request = indexedDB.open("liste", 1)
+    request.onsuccess = function(){
+        var db = request.result
+        var transaction = db.transaction("liste", "readwrite")
+        var store = transaction.objectStore("liste")
+        store.clear()
+    }
+    alert("Daten wurden gelöscht")
+}
