@@ -36,7 +36,32 @@
     button:hover{
         color: blue;
         font-size: x-large;
+    transition: all 0.3s ease;
     }
+    button {
+    padding: 10px 20px;
+    border: 2px solid black;
+    background-color: lightgray;
+    font-size: medium;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    }
+    button:hover {
+    background-color: blue;
+    color: white;
+    transform: scale(1.1);
+    }
+    .item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+button.clear-graph {
+    background-color: red;
+    color: white;
+}
 </style>
 <body>
     <div class="nav">
@@ -56,6 +81,7 @@
         <button onclick="tellName()">Wie heißt du?</button>
         <button onclick="addWordToArray()">Wort zum Array adden</button>
         <button onclick="switchToDatastructure()">Datenstruckturen</button>
+        <button onclick="reloadPage()">Alles Zurücksetzen</button>
 
     </div>
     <br>

@@ -521,3 +521,9 @@ function deleteDatasFromIndexedDB(){
     }
     alert("Daten wurden gelöscht")
 }
+function reloadPage() {
+    location.reload();
+}
+function switchToHome(){
+    window.location.href = "Lernen.html"
+}

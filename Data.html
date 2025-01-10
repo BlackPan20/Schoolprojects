@@ -11,6 +11,25 @@
         background-color: white;
         color: black;
     }
+    button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+    }
+
+    button:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid #4CAF50;
+    }
     body {
         display: flex;
             flex-direction: column;
@@ -68,6 +87,9 @@
         <button onclick="saveDatasInDatabase()">Sichere Daten in Datenbank</button>
         <button onclick="readDatasFromDatabase()">Lade Daten aus Datenbank</button>
         <button onclick="deleteDatasFromDatabase()">Lösche Daten aus Datenbank</button>
+        <button onclick="reloadPage()">Alles zurücksetzen</button>
+        <br>
+        <button onclick="switchToHome()">Zurück zu Lernen</button>
     </div>
     <br>
     <h3 id="namelist"></h3>
